@@ -4,11 +4,13 @@ networks:
 
 services:
   leconfe:
-    image: leconfe/leconfe
+    image: leconfe/leconfe:1.1.1
     restart: unless-stopped    
     container_name: "leconfe_app_${PROJECT_NAME:-demo}"
     # env_file:
     #      - .env
+    environment:
+      PHP_OPCACHE_ENABLE: 1
     ports:
       - "${HTTP_PORT:-80}:80"
       - "${HTTPS_PORT:-443}:443"
