@@ -4,7 +4,7 @@ This is a docker template for [Leconfe](https://leconfe.com) that allows you to 
 
 ## How to use
 
-- Download this repository.
+- [Download this repository](https://github.com/OpenSynergic/leconfe-docker/archive/refs/heads/main.zip).
 - Extract the downloaded file and navigate to the extracted folder.
 - Run the following command to change the ownership of the `volumes` folder
 ```bash
