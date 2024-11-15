@@ -4,7 +4,7 @@ networks:
 
 services:
   leconfe:
-    image: leconfe/leconfe:1.1.1
+    image: leconfe/leconfe:latest
     restart: unless-stopped    
     container_name: "leconfe_app_${PROJECT_NAME:-demo}"
     # env_file:
@@ -19,6 +19,7 @@ services:
       - ./volumes/private:/var/www/html/storage/app/private
       - ./volumes/plugins:/var/www/html/plugins
       - ./volumes/logs:/var/www/html/storage/logs
+      - ./volumes/sessions:/var/www/html/storage/framework/sessions
       - ./volumes/leconfe.env:/var/www/html/.env
     networks:
       - leconfe-network
