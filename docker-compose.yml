@@ -13,12 +13,12 @@ services:
       - "${HTTP_PORT:-8080}:8080"
       - "${HTTPS_PORT:-8443}:8443"
     volumes:
-      - ./volumes/public:/var/www/html/storage/app/public
-      - ./volumes/private:/var/www/html/storage/app/private
-      - ./volumes/plugins:/var/www/html/plugins
-      - ./volumes/logs:/var/www/html/storage/logs
-      - ./volumes/sessions:/var/www/html/storage/framework/sessions
-      - ./volumes/leconfe.env:/var/www/html/.env
+      - ./leconfe/public:/var/www/html/storage/app/public
+      - ./leconfe/private:/var/www/html/storage/app/private
+      - ./leconfe/plugins:/var/www/html/plugins
+      - ./leconfe/logs:/var/www/html/storage/logs
+      - ./leconfe/sessions:/var/www/html/storage/framework/sessions
+      - ./leconfe/leconfe.env:/var/www/html/.env
     networks:
       - leconfe-network
     depends_on:
@@ -36,4 +36,4 @@ services:
       MYSQL_USER: leconfe
       MYSQL_PASSWORD: leconfe
     volumes:
-      - ./volumes/db:/var/lib/mysql
+      - ./db:/var/lib/mysql
