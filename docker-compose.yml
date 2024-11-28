@@ -13,6 +13,7 @@ services:
       - "${HTTP_PORT:-8080}:8080"
       - "${HTTPS_PORT:-8443}:8443"
     volumes:
+      - ./leconfe/local:/var/www/html/storage/app/local
       - ./leconfe/public:/var/www/html/storage/app/public
       - ./leconfe/private:/var/www/html/storage/app/private
       - ./leconfe/plugins:/var/www/html/plugins
